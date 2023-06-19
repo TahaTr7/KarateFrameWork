@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/tests\/put[1:9]","start":1678182107575,"end":1678182108369,"title":"src\/test\/tests\/put[1:9] 14:41:47.575-14:41:48.369 Put Demo 1"},{"id":2,"group":1,"content":"src\/test\/tests\/put[2:17]","start":1678182108376,"end":1678182108812,"title":"src\/test\/tests\/put[2:17] 14:41:48.376-14:41:48.812 Put Demo 2"},{"id":3,"group":1,"content":"src\/test\/tests\/put[3:25]","start":1678182108819,"end":1678182109151,"title":"src\/test\/tests\/put[3:25] 14:41:48.819-14:41:49.151 Put Demo 3","className":"failed"},{"id":4,"group":1,"content":"src\/test\/tests\/put[4:34]","start":1678182109156,"end":1678182109509,"title":"src\/test\/tests\/put[4:34] 14:41:49.156-14:41:49.509 Put Demo 4"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

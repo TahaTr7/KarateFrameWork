@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/tests\/post[1:10]","start":1677750277495,"end":1677750278491,"title":"src\/test\/tests\/post[1:10] 14:44:37.495-14:44:38.491 Post DEMO 1"},{"id":2,"group":1,"content":"src\/test\/tests\/post[2:18]","start":1677750278497,"end":1677750278981,"title":"src\/test\/tests\/post[2:18] 14:44:38.497-14:44:38.981 Post DEMO 2"},{"id":3,"group":1,"content":"src\/test\/tests\/post[3:26]","start":1677750278986,"end":1677750279410,"title":"src\/test\/tests\/post[3:26] 14:44:38.986-14:44:39.410 Post DEMO 3"},{"id":4,"group":1,"content":"src\/test\/tests\/post[4:35]","start":1677750279414,"end":1677750279840,"title":"src\/test\/tests\/post[4:35] 14:44:39.414-14:44:39.840 Post DEMO 4"},{"id":5,"group":1,"content":"src\/test\/tests\/post[5:44]","start":1677750279845,"end":1677750280196,"title":"src\/test\/tests\/post[5:44] 14:44:39.845-14:44:40.196 Post DEMO 5"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

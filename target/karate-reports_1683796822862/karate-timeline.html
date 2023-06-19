@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/tests\/get[1:7]","start":1683795956828,"end":1683795957778,"title":"src\/test\/tests\/get[1:7] 14:05:56.828-14:05:57.778 Get Demo 1"},{"id":2,"group":1,"content":"src\/test\/tests\/get[2:18]","start":1683795957785,"end":1683795958129,"title":"src\/test\/tests\/get[2:18] 14:05:57.785-14:05:58.129 Get Demo 2"},{"id":3,"group":1,"content":"src\/test\/tests\/get[3:25]","start":1683795958136,"end":1683795958461,"title":"src\/test\/tests\/get[3:25] 14:05:58.136-14:05:58.461 Get Demo 3"},{"id":4,"group":1,"content":"src\/test\/tests\/get[4:33]","start":1683795958467,"end":1683795958820,"title":"src\/test\/tests\/get[4:33] 14:05:58.467-14:05:58.820 Get Demo 4"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

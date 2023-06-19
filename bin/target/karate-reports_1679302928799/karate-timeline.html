@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/tests\/post[1:10]","start":1679302886311,"end":1679302886852,"title":"src\/test\/tests\/post[1:10] 14:01:26.311-14:01:26.852 Post DEMO 1","className":"failed"},{"id":2,"group":1,"content":"src\/test\/tests\/post[2:18]","start":1679302886859,"end":1679302886958,"title":"src\/test\/tests\/post[2:18] 14:01:26.859-14:01:26.958 Post DEMO 2","className":"failed"},{"id":3,"group":1,"content":"src\/test\/tests\/post[3:26]","start":1679302886965,"end":1679302887051,"title":"src\/test\/tests\/post[3:26] 14:01:26.965-14:01:27.051 Post DEMO 3","className":"failed"},{"id":4,"group":1,"content":"src\/test\/tests\/post[4:35]","start":1679302887056,"end":1679302887136,"title":"src\/test\/tests\/post[4:35] 14:01:27.056-14:01:27.136 Post DEMO 4","className":"failed"},{"id":5,"group":1,"content":"src\/test\/tests\/post[5:45]","start":1679302887141,"end":1679302887227,"title":"src\/test\/tests\/post[5:45] 14:01:27.141-14:01:27.227 Post DEMO 5","className":"failed"},{"id":6,"group":1,"content":"src\/test\/tests\/post[6:55]","start":1679302887232,"end":1679302887333,"title":"src\/test\/tests\/post[6:55] 14:01:27.232-14:01:27.333 Post DEMO 6","className":"failed"},{"id":7,"group":1,"content":"src\/test\/tests\/post[7:67]","start":1679302887338,"end":1679302887424,"title":"src\/test\/tests\/post[7:67] 14:01:27.338-14:01:27.424 Post DEMO 7","className":"failed"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
